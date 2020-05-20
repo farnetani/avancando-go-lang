@@ -14,7 +14,7 @@ func main() {
 
 	var s string
 	fmt.Scanln(&s)
-	fmt.Println("Final result: ", result)
+	fmt.Println("> Final result: ", result)
 }
 
 func runProcess(name string, total int) {
@@ -23,7 +23,8 @@ func runProcess(name string, total int) {
 		z++
 		t := time.Duration(rand.Intn(255))
 		time.Sleep(time.Millisecond * t)
-		result = z
+		result = z  //race Conditions (vai haver um conflito, pq os 2 ao mesmo tempo irão passar por aqui)
 		fmt.Println(name, "->", i, "Partial result:", result)
 	}
+	fmt.Println("Final result: ", result)
 }

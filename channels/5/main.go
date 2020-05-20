@@ -23,8 +23,8 @@ func main() {
 	}()
 
 	go func() {
-		<-ok
-		<-ok
+		<-ok  // Sinal como semaforo
+		<-ok  // Sinal como semaforo
 		close(channel)
 	}()
 

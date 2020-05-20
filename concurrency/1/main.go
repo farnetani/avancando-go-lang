@@ -25,3 +25,5 @@ func runProcess(name string, total int) {
 		time.Sleep(time.Millisecond * t)
 	}
 }
+
+// Executar o comando: go run -race main.go // para aguardar a verificação de race Conditions
